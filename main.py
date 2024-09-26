@@ -13,7 +13,7 @@ async def main():
 
 if __name__ == '__main__':
     try:
-        log.info('Exam_Registration_bot START')
+        log.info('BOT START')
         asyncio.run(main())
     finally:
-        log.error('Exam_Registration_bot STOP')
+        log.error('BOT STOP')

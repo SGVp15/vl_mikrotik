@@ -1,2 +1,0 @@
-from .email_sending import EmailSending
-from .template import template_email_registration_exam_offline, template_email_registration_exam_online

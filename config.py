@@ -1,6 +1,6 @@
 import os.path
 
-SYSTEMLOG = os.path.join(os.getcwd(), 'data', 'systemlog.txt')
+SYSTEMLOG = os.path.join(os.getcwd(), 'systemlog.txt')
 
 ON_VPN_COMMAND = ('/ip ipsec/ policy/ disable  numbers=2',
                   '/ip ipsec/ policy/ disable  numbers=3',
