@@ -13,7 +13,7 @@ def run_command_ssh(commands: tuple, ip=IP_MIKROTIK, username=USERNAME_SSH, pass
     try:
         output = ''
         # Подключаемся к устройству
-        ssh.connect(hostname=ip, username=username, password=password, port=port)
+        ssh.connect(hostname=ip, username=username, password=password, port=port, timeout=2.0)
         sleep(1)
         # Выполняем команду
         for command in commands:
@@ -29,5 +29,3 @@ def run_command_ssh(commands: tuple, ip=IP_MIKROTIK, username=USERNAME_SSH, pass
         return str(e)
     finally:
         ssh.close()
-
-
