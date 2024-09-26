@@ -1,0 +1,6 @@
+Уважаемый {{ user.last_name_rus }} {{ user.first_name_rus }},
+Поздравляем, Вы успешно сдали экзамен {{ user.exam }}!
+
+
+С уважением,
+IT Expert
