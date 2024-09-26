@@ -18,8 +18,7 @@ def run_command_ssh(commands: tuple, ip=IP_MIKROTIK, username=USERNAME_SSH, pass
         # Выполняем команду
         for command in commands:
             stdin, stdout, stderr = ssh.exec_command(command)
-            sleep(1)
-            # await asyncio.sleep(1)
+            sleep(0.5)
             output += stdout.read().decode('utf-8') + stderr.read().decode('utf-8')
         return output
     except Exception as e:
