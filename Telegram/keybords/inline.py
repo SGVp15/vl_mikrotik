@@ -16,5 +16,6 @@ inline_kb_main = InlineKeyboardMarkup(inline_keyboard=[
 
 inline_kb_admin = InlineKeyboardMarkup(inline_keyboard=[
     add_return_main_menu(),
+    [InlineKeyboardButton(text='vpn_up', callback_data=CallBackData.vpn_up),],
     [InlineKeyboardButton(text='📩  Скачать Логи Программные', callback_data=CallBackData.get_log_program), ],
 ])
