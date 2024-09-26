@@ -21,8 +21,6 @@ def run_command_ssh(commands: tuple, ip=IP_MIKROTIK, username=USERNAME_SSH, pass
             sleep(1)
             # await asyncio.sleep(1)
             output += stdout.read().decode('utf-8') + stderr.read().decode('utf-8')
-
-        print(output)
         return output
     except Exception as e:
         print(f"Ошибка подключения: {e}")
