@@ -10,12 +10,12 @@ def add_return_main_menu():
 
 
 inline_kb_main = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='Дед мороз пришел', callback_data=CallBackData.vpn_down), ],
+    [InlineKeyboardButton(text='VPN DOWN', callback_data=CallBackData.vpn_down), ],
     [InlineKeyboardButton(text='>> Admin >>', callback_data=CallBackData.admin_menu), ],
 ])
 
 inline_kb_admin = InlineKeyboardMarkup(inline_keyboard=[
     add_return_main_menu(),
-    [InlineKeyboardButton(text='vpn_up', callback_data=CallBackData.vpn_up),],
+    [InlineKeyboardButton(text='VPN UP', callback_data=CallBackData.vpn_up),],
     [InlineKeyboardButton(text='📩  Скачать Логи Программные', callback_data=CallBackData.get_log_program), ],
 ])
