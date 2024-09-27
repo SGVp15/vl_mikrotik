@@ -12,6 +12,7 @@ class CallBackData:
     get_log_program = 'get_log_program'
     clear_log = 'clear_log'
 
+    vpn_wg_status = 'vpn_status'
     vpn_up = 'vpn_up'
     vpn_down = 'vpn_down'
 

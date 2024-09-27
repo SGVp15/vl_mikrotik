@@ -11,6 +11,7 @@ def add_return_main_menu():
 
 inline_kb_main = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='VPN DOWN', callback_data=CallBackData.vpn_down), ],
+    [InlineKeyboardButton(text='VPN WG STATUS', callback_data=CallBackData.vpn_wg_status), ],
     [InlineKeyboardButton(text='>> Admin >>', callback_data=CallBackData.admin_menu), ],
 ])
 

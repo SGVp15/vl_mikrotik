@@ -15,3 +15,5 @@ OFF_VPN_COMMAND = ('/ip ipsec/ policy/ enable  numbers=2',
                    '/ip ipsec/ policy/ enable  numbers=5',
                    'interface l2tp-server server set enabled=yes',
                    '/interface/wireguard/enable 0')
+
+STATUS_WG_VPN_COMMAND = ('/interface/wireguard/print',)
