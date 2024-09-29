@@ -14,7 +14,6 @@ def run_command_ssh(commands: tuple, ip=IP_MIKROTIK, username=USERNAME_SSH, pass
         output = ''
         # Подключаемся к устройству
         ssh.connect(hostname=ip, username=username, password=password, port=port, timeout=2.0)
-        sleep(1)
         # Выполняем команду
         for command in commands:
             stdin, stdout, stderr = ssh.exec_command(command)
