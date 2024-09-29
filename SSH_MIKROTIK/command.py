@@ -2,12 +2,12 @@ class Command:
 
     @staticmethod
     def on_vpn():
-        s = ('/ip ipsec/ policy/ disable  numbers=2',
-             '/ip ipsec/ policy/ disable  numbers=3',
-             '/ip ipsec/ policy/ disable  numbers=4',
-             '/ip ipsec/ policy/ disable  numbers=5',
-             'interface l2tp-server server set enabled=no',
-             '/interface/wireguard/disable 0')
+        s = []
+        for i in range(2, 20):
+            s.append(f'/ip ipsec/ policy/ disable  numbers={i}')
+
+        s.append('/interface l2tp-server server set enabled=no')
+        s.append('/interface/wireguard/disable 0')
         return s
 
     @staticmethod
@@ -17,10 +17,10 @@ class Command:
 
     @staticmethod
     def off_vpn():
-        s = ('/ip ipsec/ policy/ enable  numbers=2',
-             '/ip ipsec/ policy/ enable  numbers=3',
-             '/ip ipsec/ policy/ enable  numbers=4',
-             '/ip ipsec/ policy/ enable  numbers=5',
-             'interface l2tp-server server set enabled=yes',
-             '/interface/wireguard/enable 0')
+        s = []
+        for i in range(2, 20):
+            s.append(f'/ip ipsec/ policy/ enable  numbers={i}')
+
+        s.append('/interface l2tp-server server set enabled=yes')
+        s.append('/interface/wireguard/enable 0')
         return s
