@@ -6,10 +6,12 @@ from Telegram.Call_Back_Data import CallBackData
 from Telegram.config import USERS_ID, ADMIN_ID
 from Telegram.keybords.inline import inline_kb_main
 from Telegram.main import bot, dp
+from Utils.log import log
 
 
 @dp.callback_query(F.data.in_({CallBackData.vpn_down}) & F.from_user.id.in_({*ADMIN_ID, *USERS_ID}))
 async def show_registration(callback_query: types.callback_query):
+    log.info(f'{F.data} {F.from_user.id}')
     text = f'on_vpn\n'
     text += run_command_ssh(Command.off_vpn())
     await bot.send_message(
@@ -21,6 +23,7 @@ async def show_registration(callback_query: types.callback_query):
 
 @dp.callback_query(F.data.in_({CallBackData.vpn_up}) & F.from_user.id.in_({*ADMIN_ID, }))
 async def show_registration(callback_query: types.callback_query):
+    log.info(f'{F.data} {F.from_user.id}')
     text = f'off_vpn\n'
     text += run_command_ssh(Command.on_vpn())
     await bot.send_message(

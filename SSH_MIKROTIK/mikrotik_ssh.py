@@ -3,6 +3,7 @@ from time import sleep
 import paramiko
 
 from SSH_MIKROTIK.config import IP_MIKROTIK, USERNAME_SSH, PASSWORD_SSH, PORT_SSH
+from Utils.log import log
 
 
 def run_command_ssh(commands: tuple, ip=IP_MIKROTIK, username=USERNAME_SSH, password=PASSWORD_SSH,
@@ -21,7 +22,7 @@ def run_command_ssh(commands: tuple, ip=IP_MIKROTIK, username=USERNAME_SSH, pass
             output += stdout.read().decode('utf-8') + stderr.read().decode('utf-8')
         return output
     except Exception as e:
-        print(f"Ошибка подключения: {e}")
+        log(f"Ошибка подключения: {e}")
         return str(e)
     finally:
         ssh.close()
