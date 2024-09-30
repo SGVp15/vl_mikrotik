@@ -1,7 +1,7 @@
 class Command:
 
     @staticmethod
-    def on_vpn():
+    def all_vpn_down():
         s = []
         for i in range(2, 20):
             s.append(f'/ip ipsec/ policy/ disable  numbers={i}')
@@ -16,7 +16,7 @@ class Command:
         return s
 
     @staticmethod
-    def off_vpn():
+    def all_vpn_up():
         s = []
         for i in range(2, 20):
             s.append(f'/ip ipsec/ policy/ enable  numbers={i}')

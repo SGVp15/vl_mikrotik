@@ -13,7 +13,7 @@ from Utils.log import log
 async def show_registration(callback_query: types.callback_query):
     log.info(f'{F.data} {F.from_user.id}')
     text = f'on_vpn\n'
-    text += run_command_ssh(Command.off_vpn())
+    text += run_command_ssh(Command.all_vpn_down())
     await bot.send_message(
         chat_id=callback_query.from_user.id,
         text=text,
@@ -25,7 +25,7 @@ async def show_registration(callback_query: types.callback_query):
 async def show_registration(callback_query: types.callback_query):
     log.info(f'{F.data} {F.from_user.id}')
     text = f'off_vpn\n'
-    text += run_command_ssh(Command.on_vpn())
+    text += run_command_ssh(Command.all_vpn_up())
     await bot.send_message(
         chat_id=callback_query.from_user.id,
         text=text,
