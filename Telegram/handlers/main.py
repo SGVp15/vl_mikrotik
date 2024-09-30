@@ -12,7 +12,7 @@ from Utils.log import log
 @dp.callback_query(F.data.in_({CallBackData.vpn_down}) & F.from_user.id.in_({*ADMIN_ID, *USERS_ID}))
 async def show_registration(callback_query: types.callback_query):
     log.info(f'{F.data} {F.from_user.id}')
-    text = f'on_vpn\n'
+    text = f'vpn_down\n'
     text += run_command_ssh(Command.all_vpn_down())
     await bot.send_message(
         chat_id=callback_query.from_user.id,
@@ -24,7 +24,7 @@ async def show_registration(callback_query: types.callback_query):
 @dp.callback_query(F.data.in_({CallBackData.vpn_up}) & F.from_user.id.in_({*ADMIN_ID, }))
 async def show_registration(callback_query: types.callback_query):
     log.info(f'{F.data} {F.from_user.id}')
-    text = f'off_vpn\n'
+    text = f'vpn_up\n'
     text += run_command_ssh(Command.all_vpn_up())
     await bot.send_message(
         chat_id=callback_query.from_user.id,
